@@ -1,0 +1,18 @@
+footer {
+  margin-top: auto; /* footer @ bottom */
+  border-top: 1px solid var(--clr-black-var-3);
+}
+
+.footer__container {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .footer__container {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}

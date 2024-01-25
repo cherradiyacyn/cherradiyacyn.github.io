@@ -1,0 +1,71 @@
+/* stage 1 */
+main {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+section {
+  margin-top: 2rem;
+}
+
+.section__container {
+  padding-inline: 1rem;
+}
+
+.section__title {
+  margin-bottom: 1rem;
+}
+
+.section__content {
+  margin-bottom: 1rem;
+}
+
+.about__cta_wrapper {
+  max-width: 640px;
+  display: flex;
+  gap: 1rem;
+}
+
+/* stage 2 */
+.section__title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+#posts .section__container .posts__wrapper {
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("/img/pen.jpg");
+  padding: 0.5rem 1rem;
+  transition: background 0.5s;
+}
+
+#posts .section__container .posts__wrapper:hover {
+  transition: background 0.5s;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/img/pen.jpg");
+  background-position: 50% 80%;
+}
+
+/* stage 3 */
+@media (min-width: 768px) {
+  main {
+    margin-top: 4rem;
+  }
+
+  section {
+    margin-top: 3rem;
+  }
+
+  .section__container {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .section__title {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}

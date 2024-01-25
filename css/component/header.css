@@ -1,0 +1,131 @@
+/* stage 1 */
+header {
+  letter-spacing: 0.05rem;
+  word-spacing: -0.3rem;
+  background-color: var(--clr-black-var-2);
+  width: 100%;
+  position: fixed;
+}
+
+.header__container {
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__brand {
+  flex-shrink: 0;
+}
+
+.nav__visibility_wrapper {
+  width: 100%;
+  height: calc(100dvh - 3rem);
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav__closer {
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+/* stage 2 */
+.header__brand,
+.nav__hamburger,
+.menu__link_wrapper {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.1s;
+}
+
+.header__brand:hover,
+.nav__hamburger:hover,
+.menu__link_wrapper:hover,
+.header__brand:focus,
+.nav__hamburger:focus,
+.menu__link_wrapper:focus {
+  background-color: var(--clr-black-var-3);
+  transition: background-color 0.1s;
+}
+
+.header__brand {
+  padding-inline: 1rem;
+  justify-content: center;
+}
+
+.nav__hamburger {
+  width: 3rem;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.nav__visibility_wrapper {
+  border-top: 1px solid var(--clr-black-var-3);
+  transition: left 0.5s;
+}
+
+.nav__menu,
+.nav__closer {
+  background-color: var(--clr-black-var-1);
+}
+
+.nav__closer {
+  opacity: 0.8;
+}
+
+.menu__link_wrapper {
+  padding-inline: 1rem;
+  border-bottom: 1px solid var(--clr-black-var-3);
+}
+
+.header__brand a,
+.menu__link_wrapper a {
+  width: 100%;
+}
+
+/* stage 3 */
+@media (min-width: 768px) {
+  .nav__hamburger {
+    display: none;
+  }
+
+  .nav__visibility_wrapper {
+    all: unset;
+  }
+
+  .nav__menu {
+    background-color: inherit;
+    display: flex;
+  }
+
+  .menu__link_wrapper {
+    border-bottom: unset;
+  }
+
+  .nav__closer {
+    display: none;
+  }
+
+  /* stage 4 */
+  .header__container,
+  .header__brand,
+  .menu__link_wrapper {
+    height: 4rem;
+  }
+}
+
+/* struct
+header
+.header__container
+.header__brand
+.header__nav
+.nav__hamburger
+.nav__visibility_wrapper
+.nav__menu
+.menu__link_wrapper
+.nav__closer
+*/
