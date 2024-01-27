@@ -17,7 +17,7 @@ section {
 }
 
 .section__title {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .section__content {
@@ -75,6 +75,7 @@ section {
   .section__title {
     font-size: 1.875rem;
     line-height: 2.25rem;
+    margin-bottom: 1rem;
   }
 }
 
