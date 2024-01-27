@@ -3,6 +3,7 @@ header {
   letter-spacing: 0.05rem;
   word-spacing: -0.3rem;
   background-color: var(--clr-black-var-2);
+  border-bottom: 1px solid var(--clr-black-var-3);
   width: 100%;
   position: fixed;
 }
