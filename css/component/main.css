@@ -4,6 +4,10 @@ main {
   margin-bottom: 1rem;
 }
 
+#about {
+  margin-top: 1rem;
+}
+
 section {
   margin-top: 2rem;
 }
@@ -53,6 +57,10 @@ section {
 @media (min-width: 768px) {
   main {
     margin-top: 4rem;
+  }
+
+  #about {
+    margin-top: 2rem;
   }
 
   section {
