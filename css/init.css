@@ -307,6 +307,6 @@ header {
 
 @media (min-width: 768px) {
   html {
-    scroll-padding-top: 5rem;
+    scroll-padding-top: 6rem;
   }
 }
