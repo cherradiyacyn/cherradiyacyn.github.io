@@ -21,7 +21,7 @@ section {
 }
 
 .section__content {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .about__cta_wrapper {
@@ -77,6 +77,10 @@ section {
     line-height: 2.25rem;
     margin-bottom: 1rem;
   }
+
+  .section__content {
+    margin-bottom: 1rem;
+  }  
 }
 
 /* struct
