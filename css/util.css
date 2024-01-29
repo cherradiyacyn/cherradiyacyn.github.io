@@ -94,6 +94,7 @@
 .btn-alt {
   text-align: center;
   color: var(--clr-text);
+  background-color: var(--clr-secondary);
   border: 1px solid var(--clr-tertiary);
   padding: 0.5rem 1rem;
   display: inline-block;
