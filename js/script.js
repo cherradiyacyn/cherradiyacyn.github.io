@@ -9,7 +9,7 @@ const desktopMQL = window.matchMedia("(min-width: 768px)");
 
 const theme = localStorage.getItem("theme");
 function rememberTheme() {
-  localStorage.setItem("theme", "dark");
+  localStorage.setItem("theme", "light_color_scheme");
 }
 function forgetTheme() {
   localStorage.removeItem("theme");
@@ -37,7 +37,14 @@ function addLightColorScheme() {
   body.classList.add("light_color_scheme");
 }
 
+function isDay() {
+  let date = new Date();
+  let hour = date.getHours();
+  return 6 < hour && hour < 18;
+}
+
 function init() {
+  rememberTheme();
   if (theme) {
     addLightColorScheme();
     loadLightResources();
