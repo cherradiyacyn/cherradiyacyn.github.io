@@ -36,20 +36,18 @@ section {
   line-height: 2rem;
 }
 
-#posts .section__container .posts__wrapper {
+.posts__wrapper {
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("/img/pen.jpg");
+  background-image: var(--lg-posts);
   padding: 0.5rem 1rem;
   transition: background 0.5s;
 }
 
-#posts .section__container .posts__wrapper:hover {
+.posts__wrapper:hover {
   transition: background 0.5s;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/img/pen.jpg");
+  background-image: var(--lg-posts-hover);
   background-position: 50% 80%;
 }
 
@@ -80,7 +78,7 @@ section {
 
   .section__content {
     margin-bottom: 1rem;
-  }  
+  }
 }
 
 /* struct

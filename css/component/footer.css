@@ -1,13 +1,14 @@
 footer {
   margin-top: auto; /* footer @ bottom */
-  border-top: 1px solid var(--clr-black-var-3);
+  border-top: 1px solid var(--clr-tertiary);
 }
 
 .footer__container {
   height: 3rem;
+  padding-inline: 1rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 @media (min-width: 768px) {

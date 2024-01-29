@@ -2,8 +2,8 @@
 header {
   letter-spacing: 0.05rem;
   word-spacing: -0.3rem;
-  background-color: var(--clr-black-var-2);
-  border-bottom: 1px solid var(--clr-black-var-3);
+  background-color: var(--clr-secondary);
+  border-bottom: 1px solid var(--clr-tertiary);
   width: 100%;
   position: fixed;
 }
@@ -49,7 +49,7 @@ header {
 .header__brand:focus,
 .nav__hamburger:focus,
 .menu__link_wrapper:focus {
-  background-color: var(--clr-black-var-3);
+  background-color: var(--clr-tertiary);
   transition: background-color 0.1s;
 }
 
@@ -65,22 +65,22 @@ header {
 }
 
 .nav__visibility_wrapper {
-  border-top: 1px solid var(--clr-black-var-3);
+  border-top: 1px solid var(--clr-tertiary);
   transition: left 0.5s;
 }
 
 .nav__menu,
 .nav__closer {
-  background-color: var(--clr-black-var-1);
+  background-color: var(--clr-primary);
 }
 
 .nav__closer {
-  opacity: 0.8;
+  opacity: var(--opacity-closer);
 }
 
 .menu__link_wrapper {
   padding-inline: 1rem;
-  border-bottom: 1px solid var(--clr-black-var-3);
+  border-bottom: 1px solid var(--clr-tertiary);
 }
 
 .header__brand a,
