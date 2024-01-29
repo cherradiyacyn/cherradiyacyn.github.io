@@ -37,14 +37,7 @@ function addLightColorScheme() {
   body.classList.add("light_color_scheme");
 }
 
-function isDay() {
-  let date = new Date();
-  let hour = date.getHours();
-  return 6 < hour && hour < 18;
-}
-
 function init() {
-  rememberTheme();
   if (theme) {
     addLightColorScheme();
     loadLightResources();
