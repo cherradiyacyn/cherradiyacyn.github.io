@@ -7,11 +7,11 @@ const navCloser = document.querySelector(".nav__closer");
 const navMenuLinks = document.querySelectorAll(".menu__link_wrapper a");
 const desktopMQL = window.matchMedia("(min-width: 768px)");
 
-const theme = localStorage.getItem("theme");
-function rememberTheme() {
+function storePreference() {
   localStorage.setItem("theme", "light_color_scheme");
 }
-function forgetTheme() {
+
+function discardPreference() {
   localStorage.removeItem("theme");
 }
 
@@ -38,12 +38,15 @@ function addLightColorScheme() {
 }
 
 function init() {
+  let theme = localStorage.getItem("theme");
+
   if (theme) {
     addLightColorScheme();
     loadLightResources();
   } else {
     loadDarkResources();
   }
+
   renderResources();
   handleMedia();
 }
@@ -51,11 +54,11 @@ function init() {
 function handleThemeToggle() {
   body.classList.toggle("light_color_scheme");
   if (body.classList.contains("light_color_scheme")) {
-    rememberTheme();
+    storePreference();
     loadLightResources();
     renderResources();
   } else {
-    forgetTheme();
+    discardPreference();
     loadDarkResources();
     renderResources();
   }
