@@ -1,76 +1,99 @@
-const themeToggle = document.querySelector(".theme_toggle");
 const body = document.querySelector("body");
+const desktopMQL = window.matchMedia("(min-width: 768px)");
+const navVisibilityWrapper = document.querySelector(".nav__visibility_wrapper");
 const navHamburger = document.querySelector(".nav__hamburger");
 const navHamburgerImg = document.querySelector(".nav__hamburger img");
-const navVisibilityWrapper = document.querySelector(".nav__visibility_wrapper");
-const navCloser = document.querySelector(".nav__closer");
 const navMenuLinks = document.querySelectorAll(".menu__link_wrapper a");
-const desktopMQL = window.matchMedia("(min-width: 768px)");
+const navCloser = document.querySelector(".nav__closer");
+const themeToggle = document.querySelector(".theme_toggle");
 
-function storePreference() {
-  localStorage.setItem("theme", "light_color_scheme");
+// handle Theme
+function isDay() {
+  let date = new Date();
+  let hour = date.getHours();
+  return 7 < hour && hour < 19;
 }
 
-function discardPreference() {
-  localStorage.removeItem("theme");
+function getPrefs() {
+  return localStorage.getItem("theme");
 }
 
-let srcPathMenu = "";
-let srcPathClose = "";
-let themeToggleText = "";
-function loadLightResources() {
-  srcPathMenu = "/img/menu_light.svg";
-  srcPathClose = "/img/close_light.svg";
-  themeToggleText = "Dark theme";
-}
-function loadDarkResources() {
-  srcPathMenu = "/img/menu_dark.svg";
-  srcPathClose = "/img/close_dark.svg";
-  themeToggleText = "Light theme";
-}
-function renderResources() {
-  navHamburgerImg.setAttribute("src", srcPathMenu);
-  themeToggle.textContent = themeToggleText;
+function savePrefs(prefs) {
+  localStorage.setItem("theme", prefs);
 }
 
-function addLightColorScheme() {
-  body.classList.add("light_color_scheme");
+function addClass() {
+  body.classList.add("alt_theme");
 }
 
-function init() {
-  let theme = localStorage.getItem("theme");
+function removeClass() {
+  body.classList.remove("alt_theme");
+}
 
-  if (theme) {
-    addLightColorScheme();
-    loadLightResources();
-  } else {
-    loadDarkResources();
+function toggleClass() {
+  body.classList.toggle("alt_theme");
+}
+
+function classExists() {
+  return body.classList.contains("alt_theme");
+}
+
+let menuIconPath = "/img/menu_dark.svg";
+let closeIconPath = "/img/close_dark.svg";
+let themeLabel = "Light theme";
+
+function initLightAssets() {
+  menuIconPath = "/img/menu_light.svg";
+  closeIconPath = "/img/close_light.svg";
+  themeLabel = "Dark theme";
+}
+
+function initDarkAssets() {
+  menuIconPath = "/img/menu_dark.svg";
+  closeIconPath = "/img/close_dark.svg";
+  themeLabel = "Light theme";
+}
+
+function loadAssets() {
+  navHamburgerImg.setAttribute("src", menuIconPath);
+  themeToggle.textContent = themeLabel;
+}
+
+function initTheme() {
+  if (isDay() || getPrefs() === "light") {
+    addClass();
+    initLightAssets();
+    loadAssets();
   }
 
-  renderResources();
-  handleMedia();
+  if (getPrefs() === "dark") {
+    removeClass();
+    initDarkAssets();
+    loadAssets();
+  }
 }
 
 function handleThemeToggle() {
-  body.classList.toggle("light_color_scheme");
-  if (body.classList.contains("light_color_scheme")) {
-    storePreference();
-    loadLightResources();
-    renderResources();
+  toggleClass();
+  if (classExists()) {
+    initLightAssets();
+    loadAssets();
+    savePrefs("light");
   } else {
-    discardPreference();
-    loadDarkResources();
-    renderResources();
+    initDarkAssets();
+    loadAssets();
+    savePrefs("dark");
   }
 }
 
+// handle Media Query
 function handleNav() {
   if (navVisibilityWrapper.classList.contains("hide")) {
-    navHamburgerImg.setAttribute("src", srcPathClose);
+    navHamburgerImg.setAttribute("src", closeIconPath);
     navVisibilityWrapper.classList.remove("hide");
     body.classList.add("scroll_disable");
   } else {
-    navHamburgerImg.setAttribute("src", srcPathMenu);
+    navHamburgerImg.setAttribute("src", menuIconPath);
     navVisibilityWrapper.classList.add("hide");
     body.classList.remove("scroll_disable");
   }
@@ -96,7 +119,10 @@ function handleMedia() {
   }
 }
 
+// listeners
 themeToggle.addEventListener("click", handleThemeToggle);
 desktopMQL.addEventListener("change", handleMedia);
 
-init();
+// onLoad
+initTheme();
+handleMedia();

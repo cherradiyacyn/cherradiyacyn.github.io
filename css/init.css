@@ -289,7 +289,7 @@ video {
     url("/img/pen.jpg");
 }
 
-.light_color_scheme {
+.alt_theme {
   --clr-text: #000000;
   --clr-primary: #eeeeee;
   --clr-secondary: #e9e9e9;
