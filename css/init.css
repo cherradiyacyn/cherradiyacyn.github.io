@@ -284,9 +284,9 @@ video {
   --clr-btn-text: #ffffff;
   --opacity-closer: 0.7;
   --lg-posts: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("/img/pen.jpg");
+    url("/img/pen.webp");
   --lg-posts-hover: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/img/pen.jpg");
+    url("/img/pen.webp");
 }
 
 .alt_theme {
@@ -299,12 +299,12 @@ video {
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
     ),
-    url("/img/pen.jpg");
+    url("/img/pen.webp");
   --lg-posts-hover: linear-gradient(
       rgba(255, 255, 255, 0.3),
       rgba(255, 255, 255, 0.3)
     ),
-    url("/img/pen.jpg");
+    url("/img/pen.webp");
 }
 
 html {
