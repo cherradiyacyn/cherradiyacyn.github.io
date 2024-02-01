@@ -74,10 +74,6 @@ header {
   background-color: var(--clr-primary);
 }
 
-.nav__closer {
-  opacity: var(--opacity-closer);
-}
-
 .menu__link_wrapper {
   padding-inline: 1rem;
   border-bottom: 1px solid var(--clr-tertiary);
