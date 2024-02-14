@@ -308,7 +308,14 @@ video {
 }
 
 html {
-  font-family: "JetBrainsMono";
+  font-family: "JetBrainsMono", ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    "Courier New",
+    monospace;
   scroll-behavior: smooth;
   scroll-padding-top: 4rem;
 }
