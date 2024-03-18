@@ -135,6 +135,10 @@
 
 .card:hover .card_description,
 .card:focus .card_description {
-  padding-left: 0.5rem;
+  padding-inline: 0.5rem;
   transition: padding-inline 0.3s;
+}
+
+.theme_toggle {
+  cursor: pointer;
 }
